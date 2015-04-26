@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using StoreMVC.Models
+
+<h2>List of Products</h2>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Buy</th>
+    </tr>
+    @foreach (Product p in ViewBag.listProducts)
+    {
+        <tr>
+            <td>@p.ID</td>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@Html.ActionLink("Order Now", "OrderNow", "ShoppingCart", new {id = p.ID }, null)</td>
+        </tr>
+    }
+</table>
