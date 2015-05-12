@@ -12,6 +12,7 @@ namespace StoreMVC.Controllers
     public class ProductsController : Controller
     {
         private ProductDBContext db = new ProductDBContext();
+        private ExporterFactory exporterFactory = new ExporterFactory();
 
         //
         // GET: /Products/
@@ -40,6 +41,20 @@ namespace StoreMVC.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        public ActionResult JsonExport()
+        {
+            Exporter exporter = exporterFactory.getExporter("json");
+            exporter.export(db.Products); 
+            return RedirectToAction("Index", "Products");
+        }
+
+        public ActionResult CsvExport()
+        {
+            Exporter exporter = exporterFactory.getExporter("csv");
+            exporter.export(db.Products);
+            return RedirectToAction("Index", "Products");
         }
 
         //

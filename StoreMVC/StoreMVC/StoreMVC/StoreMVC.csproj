@@ -189,10 +189,14 @@
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="CsvExporter.cs" />
+    <Compile Include="Exporter.cs" />
+    <Compile Include="ExporterFactory.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="JsonExporter.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="MyModel.Context.cs">
